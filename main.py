@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 """
@@ -49,26 +48,10 @@ try:
     driver.get(url)
     print("Website accessed!")
     time.sleep(5)
-    # frame = driver.find_element(By.ID, "ngxFrame270554")
-    # driver.switch_to.frame(frame)
-    # print("Frame found and selected.")
-    # time.sleep(5)
-    # email_input = driver.find_element(By.ID, "xReturningUserEmail")
-    # ActionChains(driver) \
-    #     .scroll_to_element(email_input) \
-    #     .perform()
-    # print("Email input found.")
-    # email_input.click()
-    # print("Email input clicked.")
-    # email_input.send_keys("TEST")
-    # print("Text input into field.")
-    # time.sleep(5)
-    # submit = driver.find_element(By.ID, "xCheckUser")
-    # submit.click()
     apply_and_submit("ngxFrame270554", "xReturningUserEmail", "xCheckUser", "xSecondaryForm")
     print("HGTV Submitted.")
     time.sleep(10)
-    food_link = driver.find_element(By.CLASS_NAME, "editorial-link-no-style")
+    food_link = driver.find_element(By.ID, "reentry-link")
     # https://www.hgtv.com/sweepstakes/hgtv-smart-home/sweepstakes/thanks is the link that should be clicked, not
     # working as it's not found.
     food_link.click()
